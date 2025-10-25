@@ -19,15 +19,21 @@ async function getWeaponData(weaponId) {
     return data;
 }
 
-async function addLootboxWeaponIds(lootboxes) {
+async function buildLootboxDataWithWeaponRarity(lootboxes) {
     const result = [];
     let i = 1;
     for (const box of lootboxes) {
         try {
             const data = await getLootboxWeapons(box.mint);
-            const weapons = data.weapons.map((w) => ({ id: w[1] }));
-
-            console.log(`${i} Adding weapon IDs to ${box.mint}`);
+            console.log(`${i} Adding weapon IDs and rarities to ${box.mint}`);
+            const weapons = await Promise.all(
+                data.weapons.map(async (w) => {
+                    const id = w[1];
+                    const weaponData = await getWeaponData(id);
+                    const type = weaponData.attributes?.[0]?.value || "Unknown";
+                    return { id, type };
+                })
+            );
             result.push({
                 lootbox: box.mint,
                 weapons,
@@ -48,14 +54,14 @@ const lootboxes = [
     { mint: "..." },
 ];
 
-const data = await addLootboxWeaponIds(lootboxes);
+const data = await buildLootboxDataWithWeaponRarity(lootboxes);
 
 const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
 const url = URL.createObjectURL(blob);
 
 const a = document.createElement("a");
 a.href = url;
-a.download = "lootboxes-with-weapons.json";
+a.download = "lootboxes-with-weapon-data.json";
 a.click();
 
 URL.revokeObjectURL(url);
