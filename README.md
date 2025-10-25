@@ -117,7 +117,7 @@ Once you press Enter, the script will:
 
 - Fetch each lootbox’s contents via /api/lootbox/open
 
-- Retrieve rarity/type data for each weapon via https://assets.bravoready.com/br1-infinite/weapons/<id>.json
+- Retrieve rarity/type data for each weapon via https://assets.bravoready.com/br1-infinite/weapons/{weaponId}.json
 
 - Log progress in the console
 
@@ -179,4 +179,4 @@ The script will download a json file with all mint addresses for the specified c
 - These scripts use the browser’s fetch API, so they work without any build tools or dependencies.
 - Running them directly on [br1game.com](https://www.br1game.com/signup?referral=Tammoom) ensures the requests are from an allowed origin (no CORS or SSL issues).
 
-# Built out of curiosity an for fun
+## Built out of curiosity and for fun.
