@@ -84,9 +84,6 @@ async function fetchAllNFTs() {
     // simplify data (mint, name, image, traits)
     const simplified = allNFTs.map((nft) => ({
         mint: nft.id,
-        name: nft.content?.metadata?.name || null,
-        image: nft.content?.files?.[0]?.uri || null,
-        traits: nft.content?.metadata?.attributes || [],
     }));
 
     // create json blob for download
