@@ -24,3 +24,5 @@ async function getWeaponData(weaponId) {
     const data = await resp.json();
     console.log(data);
 }
+
+
