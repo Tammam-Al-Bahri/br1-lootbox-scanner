@@ -18,7 +18,7 @@ Both scripts are designed to run **directly in your browser’s DevTools console
 
 ## Usage (scanner.js)
 
-### 1. Open the BR1 website (to avoid CORS / TLS / SSL issues
+### 1. Open the BR1 website (to avoid CORS / TLS / SSL issues)
 (why I made it for DevTools in the first place)
 Go to:
 
