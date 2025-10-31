@@ -22,7 +22,7 @@ Both scripts are designed to run **directly in your browser’s DevTools console
 (why I made it for DevTools in the first place)
 Go to:
 
-[br1game.com](https://www.br1game.com/signup?referral=Tammoom)
+[br1game.com](https://www.br1game.com)
 
 ### 2. Open Developer Tools
 - Press **F12**
