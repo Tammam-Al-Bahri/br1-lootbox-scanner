@@ -81,7 +81,7 @@ async function fetchAllNFTs() {
 
     console.log(`Total unique NFTs fetched: ${allNFTs.length}`);
 
-    // simplify data (mint, name, image, traits)
+    // simplify data
     const simplified = allNFTs.map((nft) => ({
         mint: nft.id,
     }));
