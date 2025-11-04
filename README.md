@@ -178,6 +178,6 @@ The script will download a json file with all mint addresses for the specified c
 
 ## Notes
 - These scripts use the browser’s fetch API, so they work without any build tools or dependencies.
-- Running them directly on [br1game.com](https://www.br1game.com/signup?referral=Tammoom) ensures the requests are from an allowed origin (no CORS or SSL issues).
+- Running them directly on [br1game.com](https://www.br1game.com) ensures the requests are from an allowed origin (no CORS or SSL issues).
 
 ## Built out of curiosity and for fun.
