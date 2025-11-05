@@ -19,7 +19,7 @@ async function getWeaponData(weaponId) {
     return data;
 }
 
-async function buildLootboxDataWithWeaponRarity(lootboxes) {
+async function buildLootboxDataWithWeaponRarity(lootboxes, getFullData) {
     const result = [];
     let i = 1;
     for (const box of lootboxes) {
@@ -31,7 +31,8 @@ async function buildLootboxDataWithWeaponRarity(lootboxes) {
                     const id = w[1];
                     const weaponData = await getWeaponData(id);
                     const type = weaponData.attributes?.[0]?.value || "Unknown";
-                    return { id, type };
+                    if (getFullData) return { id, weaponData };
+                    else return { id, type };
                 })
             );
             result.push({
@@ -54,7 +55,7 @@ const lootboxes = [
     { mint: "..." },
 ];
 
-const data = await buildLootboxDataWithWeaponRarity(lootboxes);
+const data = await buildLootboxDataWithWeaponRarity(lootboxes, false);
 
 const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
 const url = URL.createObjectURL(blob);
