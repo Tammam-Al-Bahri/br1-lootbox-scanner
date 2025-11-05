@@ -8,13 +8,13 @@ async function getLootboxWeapons(mintAddress) {
     return data;
 }
 
+const ogWeaponsEndpoint = "https://assets.bravoready.com/br1-infinite/weapons/";
+const slashersWeaponsEndpoint = "https://assets.bravoready.com/br1-infinite/weapons-v2/";
+
 async function getWeaponData(weaponId) {
-    const response = await fetch(
-        `https://assets.bravoready.com/br1-infinite/weapons/${weaponId}.json`,
-        {
-            method: "GET",
-        }
-    );
+    const response = await fetch(`${slashersWeaponsEndpoint}${weaponId}.json`, {
+        method: "GET",
+    });
     const data = await response.json();
     return data;
 }

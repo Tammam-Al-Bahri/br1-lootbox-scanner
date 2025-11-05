@@ -1,5 +1,5 @@
 const API_KEY = "YOUR_HELIUS_API_KEY"; // can get this for free https://www.helius.dev/
-const CREATOR = "5dZuTXWwwJZMr1LuZpYsURf3bgK5PsrYD31J5m31TupV"; // creator address for the nft collection, found in nft metadata
+const CREATOR = "5dZuTXWwwJZMr1LuZpYsURf3bgK5PsrYD31J5m31TupV"; // lootboxes creator address for the nft collection, found in nft metadata
 
 const PAGE_LIMIT = 1000; // max allowed by helius
 const MAX_RETRIES = 3;
